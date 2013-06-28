@@ -1,0 +1,4 @@
+wpghost
+=======
+
+Wordpress Ghost editor
