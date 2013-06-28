@@ -1,10 +1,6 @@
-<!DOCTYPE html>
-<html>
-  <body>
-    <textarea id="text-input" oninput="updateEditor()"
-              rows="6" cols="60">Type **Markdown** here.</textarea>
+<div id="editor">
+    <textarea id="text-input" oninput="updateEditor()" rows="6" cols="60">Type **Markdown** here.</textarea>
     <div id="preview"> </div>
-    <script src="js/jquery.js"></script>
     <script src="js/markdown.js"></script>
     <script>
         function updateEditor() {
@@ -12,6 +8,6 @@
             previewCode = previewCode.replace(/&amp;/gi, '&');
             $('#preview').html( previewCode );
         }
+        $(function() { updateEditor(); });
     </script>
-  </body>
-</html>
+</div>
