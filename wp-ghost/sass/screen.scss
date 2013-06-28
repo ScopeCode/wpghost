@@ -3,23 +3,10 @@
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
+@import "codemirror";
 
 #editor {
-    #preview, textarea {
-        position: fixed;
-        top: 10%;
-        width: 49%;
-        outline: none;
-        height:80%;
-        border:1px solid #ccc;
-        background: #fff;
-        padding: 1%;
-    }
-    textarea {
-        left: 0;
-        resize: none;
-    }
-    #preview {
+    #view {
         right: 0;
         font-family: Lato, sans-serif;
         font-size: .95em;

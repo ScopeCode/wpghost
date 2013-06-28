@@ -2,31 +2,318 @@
  * In this file you should write your main styles. (or centralize your imports)
  * Import this file using the following HTML or equivalent:
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-/* line 8, ../sass/screen.scss */
-#editor #preview, #editor textarea {
-  position: fixed;
-  top: 10%;
-  width: 49%;
+/* line 1, ../sass/_codemirror_default.scss */
+.CodeMirror-scroll {
+  overflow: auto;
+  height: 300px;
+  /* This is needed to prevent an IE[67] bug where the scrolled content
+     is visible outside of the scrolling box. */
+  position: relative;
   outline: none;
-  height: 80%;
-  border: 1px solid #cccccc;
-  background: #fff;
-  padding: 1%;
 }
-/* line 18, ../sass/screen.scss */
-#editor textarea {
+
+/* line 10, ../sass/_codemirror_default.scss */
+.CodeMirror-gutter {
+  position: absolute;
   left: 0;
-  resize: none;
+  top: 0;
+  z-index: 10;
+  background-color: #f7f7f7;
+  border-right: 1px solid #eeeeee;
+  min-width: 2em;
+  height: 100%;
 }
-/* line 22, ../sass/screen.scss */
-#editor #preview {
+
+/* line 18, ../sass/_codemirror_default.scss */
+.CodeMirror-gutter-text {
+  color: #aaa;
+  text-align: right;
+  padding: 0.4em 0.2em 0.4em 0.4em;
+  white-space: pre !important;
+}
+
+/* line 24, ../sass/_codemirror_default.scss */
+.CodeMirror-lines {
+  padding: .4em;
+  white-space: pre;
+}
+
+/* line 29, ../sass/_codemirror_default.scss */
+.CodeMirror pre {
+  -moz-border-radius: 0;
+  -webkit-border-radius: 0;
+  -o-border-radius: 0;
+  border-radius: 0;
+  border-width: 0;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: inherit;
+  padding: 0;
+  margin: 0;
+  white-space: pre;
+  word-wrap: normal;
+  line-height: inherit;
+  color: inherit;
+}
+
+/* line 44, ../sass/_codemirror_default.scss */
+.CodeMirror-wrap pre {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  word-break: normal;
+}
+
+/* line 49, ../sass/_codemirror_default.scss */
+.CodeMirror-wrap .CodeMirror-scroll {
+  overflow-x: hidden;
+}
+
+/* line 53, ../sass/_codemirror_default.scss */
+.CodeMirror textarea {
+  outline: none !important;
+}
+
+/* line 57, ../sass/_codemirror_default.scss */
+.CodeMirror pre.CodeMirror-cursor {
+  z-index: 10;
+  position: absolute;
+  visibility: hidden;
+  border-left: 1px solid black;
+  border-right: none;
+  width: 0;
+}
+
+/* line 65, ../sass/_codemirror_default.scss */
+.cm-keymap-fat-cursor pre.CodeMirror-cursor {
+  width: auto;
+  border: 0;
+  background: transparent;
+  background: rgba(0, 200, 0, 0.4);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#6600c800, endColorstr=#4c00c800);
+}
+
+/* Kludge to turn off filter in ie9+, which also accepts rgba */
+/* line 73, ../sass/_codemirror_default.scss */
+.cm-keymap-fat-cursor pre.CodeMirror-cursor:not(#nonsense_id) {
+  filter: progid:DXImageTransform.Microsoft.gradient(enabled=false);
+}
+
+/* line 77, ../sass/_codemirror_default.scss */
+.CodeMirror-focused pre.CodeMirror-cursor {
+  visibility: visible;
+}
+
+/* line 81, ../sass/_codemirror_default.scss */
+div.CodeMirror-selected {
+  background: #d9d9d9;
+}
+
+/* line 82, ../sass/_codemirror_default.scss */
+.CodeMirror-focused div.CodeMirror-selected {
+  background: #d7d4f0;
+}
+
+/* line 84, ../sass/_codemirror_default.scss */
+.CodeMirror-searching {
+  background: #ffa;
+  background: rgba(255, 255, 0, 0.4);
+}
+
+/* line 89, ../sass/_codemirror_default.scss */
+span.cm-header, span.cm-strong {
+  font-weight: bold;
+}
+
+/* line 90, ../sass/_codemirror_default.scss */
+span.cm-em {
+  font-style: italic;
+}
+
+/* line 91, ../sass/_codemirror_default.scss */
+span.cm-emstrong {
+  font-style: italic;
+  font-weight: bold;
+}
+
+/* line 92, ../sass/_codemirror_default.scss */
+span.cm-link {
+  text-decoration: underline;
+}
+
+/* line 94, ../sass/_codemirror_default.scss */
+div.CodeMirror span.CodeMirror-matchingbracket {
+  color: #0f0;
+}
+
+/* line 95, ../sass/_codemirror_default.scss */
+div.CodeMirror span.CodeMirror-nonmatchingbracket {
+  color: #f22;
+}
+
+/* line 3, ../sass/_codemirror.scss */
+.CodeMirror {
+  font-family: Inconsolata, monospace;
+  font-size: 1.1em;
+  line-height: 1.2em;
+}
+
+/* line 8, ../sass/_codemirror.scss */
+.CodeMirror pre {
+  word-wrap: break-word;
+  white-space: pre-wrap;
+  word-break: normal;
+  padding: 0 40px;
+}
+
+/* line 15, ../sass/_codemirror.scss */
+.cm-s-default .cm-keyword {
+  color: #708;
+}
+
+/* line 20, ../sass/_codemirror.scss */
+.cm-s-default .cm-atom {
+  color: #219;
+}
+
+/* line 25, ../sass/_codemirror.scss */
+.cm-s-default .cm-number {
+  color: #164;
+}
+
+/* line 30, ../sass/_codemirror.scss */
+.cm-s-default .cm-def {
+  color: #00f;
+}
+
+/* line 35, ../sass/_codemirror.scss */
+.cm-s-default .cm-variable-2 {
+  color: #05a;
+}
+
+/* line 40, ../sass/_codemirror.scss */
+.cm-s-default .cm-variable-3 {
+  color: #085;
+}
+
+/* line 45, ../sass/_codemirror.scss */
+.cm-s-default .cm-comment {
+  color: #a50;
+}
+
+/* line 50, ../sass/_codemirror.scss */
+.cm-s-default .cm-string {
+  color: #a11;
+}
+
+/* line 55, ../sass/_codemirror.scss */
+.cm-s-default .cm-string-2 {
+  color: #f50;
+}
+
+/* line 60, ../sass/_codemirror.scss */
+.cm-s-default .cm-builtin {
+  color: #30a;
+}
+
+/* line 65, ../sass/_codemirror.scss */
+.cm-s-default .cm-bracket {
+  color: #997;
+}
+
+/* line 70, ../sass/_codemirror.scss */
+.cm-s-default .cm-tag {
+  color: #170;
+}
+
+/* line 75, ../sass/_codemirror.scss */
+.cm-s-default .cm-header {
+  color: #000;
+  font-size: 1.4em;
+  line-height: 1.4em;
+}
+
+/* line 82, ../sass/_codemirror.scss */
+.cm-s-default .cm-quote {
+  color: #090;
+}
+
+/* line 87, ../sass/_codemirror.scss */
+.cm-s-default .cm-hr {
+  color: #999;
+}
+
+/* line 92, ../sass/_codemirror.scss */
+.cm-negative {
+  color: #d44;
+}
+
+/* line 97, ../sass/_codemirror.scss */
+.cm-positive {
+  color: #292;
+}
+
+/* line 102, ../sass/_codemirror.scss */
+.cm-header, .cm-strong {
+  font-weight: 700;
+}
+
+/* line 107, ../sass/_codemirror.scss */
+.cm-em {
+  font-style: italic;
+}
+
+/* line 112, ../sass/_codemirror.scss */
+.cm-emstrong {
+  font-style: italic;
+  font-weight: 700;
+}
+
+/* line 118, ../sass/_codemirror.scss */
+.cm-link {
+  text-decoration: underline;
+}
+
+/* line 123, ../sass/_codemirror.scss */
+div.CodeMirror span.CodeMirror-matchingbracket {
+  color: #0f0;
+}
+
+/* line 128, ../sass/_codemirror.scss */
+div.CodeMirror span.CodeMirror-nonmatchingbracket {
+  color: #f22;
+}
+
+/* line 133, ../sass/_codemirror.scss */
+.cm-s-default .cm-variable, .cm-s-default .cm-property, .cm-s-default .cm-operator {
+  color: #000;
+}
+
+/* line 138, ../sass/_codemirror.scss */
+.cm-s-default .cm-meta, .cm-s-default .cm-qualifier {
+  color: #555;
+}
+
+/* line 143, ../sass/_codemirror.scss */
+.cm-s-default .cm-error, .cm-invalidchar {
+  color: red;
+}
+
+/* line 148, ../sass/_codemirror.scss */
+.cm-s-default .cm-attribute, .cm-s-default .cm-link {
+  color: #00c;
+}
+
+/* line 9, ../sass/screen.scss */
+#editor #view {
   right: 0;
   font-family: Lato, sans-serif;
   font-size: .95em;
   line-height: 1.7em;
   font-weight: 300;
 }
-/* line 29, ../sass/screen.scss */
+/* line 16, ../sass/screen.scss */
 #editor::selection {
   color: #242628;
   text-shadow: none;

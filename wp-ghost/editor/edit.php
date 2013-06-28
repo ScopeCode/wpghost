@@ -5,14 +5,18 @@
     <div id="input-wrap">
         <textarea id="input-md"></textarea>
     </div>
+    
+    <div id="expand-view"></div>
+    <div id="expand-input"></div>
+    
     <div id="view-wrap">
         <div id="view" class="markdown scale"></div>
     </div>
 
 </div>
 
-<link href="js/markdown/codemirror/css/codemirror.css" rel="stylesheet"></link>
-<link href="css/droid-sans/droid-sans.css" rel="stylesheet"></link>
+<!--<link href="js/markdown/codemirror/css/codemirror.css" rel="stylesheet"></link>-->
+<!--<link href="css/droid-sans/droid-sans.css" rel="stylesheet"></link>-->
 <link href="css/markdown.css" rel="stylesheet"></link>
 
 <script src="js/markdown/BlobBuilder.min.js" type="text/javascript"></script>
