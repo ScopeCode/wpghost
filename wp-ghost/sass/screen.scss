@@ -1,20 +1,3 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
-
 @import "codemirror";
-
-#editor {
-    #view {
-        right: 0;
-        font-family: Lato, sans-serif;
-        font-size: .95em;
-        line-height: 1.7em;
-        font-weight: 300;
-    }
-    &::selection {
-        color: #242628;
-        text-shadow: none;
-    }
-}
+@import "base";
+@import "ghost";
