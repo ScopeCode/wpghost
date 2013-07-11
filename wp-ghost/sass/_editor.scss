@@ -1,0 +1,49 @@
+
+$height-title: 70px;
+$height-tags: 60px;
+
+$bgcolor-tags: #333;
+
+#editor {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #eee;
+    
+    #post-title {
+        position: absolute;
+        width: 100%;
+        height: $height-title;
+        padding: 0px 15px;
+        z-index: 99;
+    }
+    input#title {
+        font-size: 2em;
+        border: 0;
+        margin: 10px 0;
+        padding: 8px;
+        width: 100%;
+        outline: none;
+        border: 1px solid transparent;
+        &:hover {
+            border-color: #ccc;
+        }
+        &:active, &:focus {
+            border-color: #aaa;
+        }
+    }
+    #post-tags {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: $height-tags;
+        z-index: 99;
+        background: $bgcolor-tags;
+        
+        #publish {
+            float:right;
+            margin: 10px;
+        }
+    }
+}

@@ -1,0 +1,47 @@
+
+#{$button-namespace} {
+    border: 1px solid darken($button-bgcolor, 10%);
+    color:  $button-text-color;
+    background-color: $button-bgcolor;
+    @include background(linear-gradient(top,  lighten($button-bgcolor, 5%), darken($button-bgcolor, 5%)));
+    @include box-shadow(inset 0px 1px 0px rgba(255, 255, 255, .5), 0px 1px 2px rgba(0, 0, 0, .20));
+    @include inline-block(middle);
+    height: $button-height;
+    line-height: $button-height;
+    padding: 0px ($button-height * .8);
+    font-weight: $font-weight;
+    font-size: $font-size;
+    font-family: $font-family;
+    margin: 0;
+    text-decoration: none;
+    text-align: center;
+    &:hover {
+        background-color: $button-bgcolor;
+        @include background(linear-gradient(top,  lighten($button-bgcolor, 10%), darken($button-bgcolor, 7%)));
+    }
+    &:active {
+        @include box-shadow(inset 0px 1px 3px rgba(0, 0, 0, .3), 0px 1px 0px rgba(255, 255, 255, .2));
+        @include background(linear-gradient(top,  darken($button-bgcolor, 10%), lighten($button-bgcolor, 7%)));
+        color: darken($button-text-color, 10%);
+    }
+}
+
+//HEIGHT NEEDED FOR FORM ELEMENTS
+input#{$button-namespace}, button#{$button-namespace} {
+    height: $button-height + 2;
+    cursor: pointer;
+}
+
+// DISABLED STATE
+#{$button-namespace}.disabled,
+#{$button-namespace}.disabled:hover,
+#{$button-namespace}.disabled:active,
+input#{$button-namespace}:disabled,
+button#{$button-namespace}:disabled {
+    @include box-shadow(0px 1px 2px rgba(0, 0, 0, .10));
+    background: #EEE;
+    border: 1px solid #DDD;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 1);
+    color: #CCC;
+    cursor: default;
+}

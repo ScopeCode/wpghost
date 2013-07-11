@@ -1,0 +1,6 @@
+@import "foundation/components/grid";
+
+#posts,
+#post-preview {
+    @include grid-column(6);
+}

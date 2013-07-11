@@ -281,7 +281,8 @@ padding:3px 4px;
 }
 
 .scrolling .floatingheader {
-box-shadow:rgba(0,0,0,0.02) 0 1px 2px 0 -1px 0 inset;
+  background: rgba(255,255,255,.9);
+  box-shadow:rgba(0,0,0,0.02) 0 1px 2px 0 -1px 0 inset;
 }
 
 .scrolling .floatingheader::before {
@@ -355,50 +356,38 @@ height:100px;
 position:relative;
 }
 
-.entry-preview-content .img-placeholder span {
-display:block;
-height:30px;
-position:absolute;
-margin-top:-15px;
-top:50%;
-width:100%;
-text-align:center;
+.editor {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
 }
 
-.features .editor .inner {
-padding:40px;
-}
-
-.features .editor .outer {
-border-top:#edece4 1px solid;
-}
-
-.features .editor .editorwrap {
-max-width:1180px;
+.editor .editorwrap {
 position:relative;
-height:450px;
+height:inherit;
 margin:0 auto;
-padding:40px 0;
 }
 
-.features .editor .entry-markdown {
+.editor .entry-markdown {
 left:0;
 padding-left:40px;
 }
 
-.features .editor .entry-preview {
+.editor .entry-preview {
 right:0;
 border-left:#fff 20px solid;
 box-shadow:#edece4 -1px 0 0;
 }
 
-.features .rendered-markdown p {
+.rendered-markdown p {
 font-size: 1.2em;
 color: #868c92;
 text-indent: 0;
 }
 
-.features .editor .entry-markdown,.features .editor .entry-preview {
+.editor .entry-markdown,.editor .entry-preview {
 -webkit-box-sizing:border-box;
 -moz-box-sizing:border-box;
 box-sizing:border-box;
@@ -409,21 +398,21 @@ top:0;
 background:#fff;
 }
 
-.features .editor .entry-markdown.active,.features .editor .entry-preview.active {
+.editor .entry-markdown.active,.editor .entry-preview.active {
 z-index:200;
 }
 
-.features .editor .entry-markdown.active .markdown,.features .editor .entry-markdown.active .entry-preview-content,.features .editor .entry-preview.active .markdown,.features .editor .entry-preview.active .entry-preview-content {
+.editor .entry-markdown.active .markdown,.editor .entry-markdown.active .entry-preview-content,.editor .entry-preview.active .markdown,.editor .entry-preview.active .entry-preview-content {
 height:auto;
 overflow:auto;
 }
 
-.features .editor .entry-word-count {
+.editor .entry-word-count {
 float:right;
 padding-right:22px;
 }
 
-.features .editor .entry-markdown-content textarea {
+.editor .entry-markdown-content textarea {
 border:0;
 width:100%;
 height:100%;
@@ -437,7 +426,7 @@ margin:0;
 padding:0;
 }
 
-.features .editor .CodeMirror {
+.editor .CodeMirror {
 height:auto;
 position:absolute;
 top:0;
@@ -450,31 +439,31 @@ line-height:1.2em;
 color:#6c7379;
 }
 
-.features .editor .CodeMirror-lines {
-padding:65px 0 40px;
+.editor .CodeMirror-lines {
+padding:35px 0 40px;
 }
 
-.features .editor .CodeMirror pre {
-padding:0 40px;
+.editor .CodeMirror pre {
+padding:0 40px 0 15px;
 }
 
-.features .editor .cm-header {
+.editor .cm-header {
 color:#000;
 font-size:1.4em;
 line-height:1.4em;
 }
 
-.features .editor .entry-preview-content {
+.editor .entry-preview-content {
 position:absolute;
 top:0;
 right:0;
 bottom:0;
 left:0;
 overflow:auto;
-padding:60px 40px 40px 30px;
+padding:30px 40px 40px 15px;
 }
 
-.cm-s-default .cm-variable,.cm-s-default .cm-property,.cm-s-default .cm-operator,.features .editor .cm-string,.features .editor .cm-link,.features .editor .cm-comment,.features .editor .cm-quote {
+.cm-s-default .cm-variable,.cm-s-default .cm-property,.cm-s-default .cm-operator,.editor .cm-string,.editor .cm-link,.editor .cm-comment,.editor .cm-quote {
 color:#000;
 }
 
@@ -502,7 +491,7 @@ font-style:italic;
 text-decoration:underline;
 }
 
-.CodeMirror-sizer,.wrapper,.features .manage {
+.CodeMirror-sizer,.wrapper,.manage {
 position:relative;
 }
 
