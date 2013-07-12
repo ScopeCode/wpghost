@@ -499,12 +499,12 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 
 /* line 247, ../sass/_codemirror.scss */
 .CodeMirror-selected {
-  background: #d9d9d9;
+  background: #eee;
 }
 
 /* line 251, ../sass/_codemirror.scss */
 .CodeMirror-focused .CodeMirror-selected {
-  background: #d7d4f0;
+  background: #ddd;
 }
 
 /* line 255, ../sass/_codemirror.scss */
@@ -528,22 +528,12 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 }
 
 /* line 274, ../sass/_codemirror.scss */
-.floatingheader button, .floatingheader .button {
-  display: inline-block;
-  font-size: 10px;
-  min-height: 20px;
-  height: 20px;
-  vertical-align: top;
-  padding: 3px 4px;
-}
-
-/* line 283, ../sass/_codemirror.scss */
 .scrolling .floatingheader {
   background: rgba(255, 255, 255, 0.9);
   box-shadow: rgba(0, 0, 0, 0.02) 0 1px 2px 0 -1px 0 inset;
 }
 
-/* line 288, ../sass/_codemirror.scss */
+/* line 279, ../sass/_codemirror.scss */
 .scrolling .floatingheader::before {
   content: "";
   height: 40px;
@@ -555,7 +545,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   box-shadow: rgba(0, 0, 0, 0.02) 0 2px 2px;
 }
 
-/* line 299, ../sass/_codemirror.scss */
+/* line 290, ../sass/_codemirror.scss */
 .scrolling .floatingheader::after {
   content: "";
   height: 40px;
@@ -567,66 +557,66 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   box-shadow: rgba(0, 0, 0, 0.02) 0 3px 3px;
 }
 
-/* line 310, ../sass/_codemirror.scss */
+/* line 301, ../sass/_codemirror.scss */
 .entry-preview-content {
   font-size: .95em;
   line-height: 1.7em;
   font-weight: 300;
 }
 
-/* line 316, ../sass/_codemirror.scss */
+/* line 307, ../sass/_codemirror.scss */
 .entry-preview-content a {
   color: #5ba4e5;
   text-decoration: underline;
 }
 
-/* line 321, ../sass/_codemirror.scss */
+/* line 312, ../sass/_codemirror.scss */
 .entry-preview-content p {
   margin: 1.2em 0 1.6em;
 }
 
-/* line 325, ../sass/_codemirror.scss */
+/* line 316, ../sass/_codemirror.scss */
 .entry-preview-content p:first-child {
   margin-top: 0;
 }
 
-/* line 329, ../sass/_codemirror.scss */
+/* line 320, ../sass/_codemirror.scss */
 .entry-preview-content h1, .entry-preview-content h2, .entry-preview-content h3, .entry-preview-content h4, .entry-preview-content h5, .entry-preview-content h6 {
   color: #242628!important;
 }
 
-/* line 333, ../sass/_codemirror.scss */
+/* line 324, ../sass/_codemirror.scss */
 .entry-preview-content h1 {
   font-size: 3em;
   font-weight: 700;
 }
 
-/* line 338, ../sass/_codemirror.scss */
+/* line 329, ../sass/_codemirror.scss */
 .entry-preview-content h2 {
   font-size: 2.2em;
   font-weight: 700;
 }
 
-/* line 343, ../sass/_codemirror.scss */
+/* line 334, ../sass/_codemirror.scss */
 .entry-preview-content h3 {
   font-size: 1.8em;
   font-weight: 700;
 }
 
-/* line 348, ../sass/_codemirror.scss */
+/* line 339, ../sass/_codemirror.scss */
 .entry-preview-content .btn {
   text-decoration: none;
   color: #35393b;
 }
 
-/* line 353, ../sass/_codemirror.scss */
+/* line 344, ../sass/_codemirror.scss */
 .entry-preview-content .img-placeholder {
   border: 5px dashed #35393b;
   height: 100px;
   position: relative;
 }
 
-/* line 359, ../sass/_codemirror.scss */
+/* line 350, ../sass/_codemirror.scss */
 .editor {
   position: absolute;
   width: 100%;
@@ -634,35 +624,34 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   top: 0;
   left: 0;
 }
-
-/* line 367, ../sass/_codemirror.scss */
+/* line 356, ../sass/_codemirror.scss */
 .editor .editorwrap {
   position: relative;
   height: inherit;
-  margin: 0 auto;
+  margin: 0 15px;
 }
 
-/* line 373, ../sass/_codemirror.scss */
+/* line 363, ../sass/_codemirror.scss */
 .editor .entry-markdown {
   left: 0;
   padding-left: 40px;
 }
 
-/* line 378, ../sass/_codemirror.scss */
+/* line 368, ../sass/_codemirror.scss */
 .editor .entry-preview {
   right: 0;
   border-left: white 20px solid;
   box-shadow: #edece4 -1px 0 0;
 }
 
-/* line 384, ../sass/_codemirror.scss */
+/* line 374, ../sass/_codemirror.scss */
 .rendered-markdown p {
   font-size: 1.2em;
   color: #868c92;
   text-indent: 0;
 }
 
-/* line 390, ../sass/_codemirror.scss */
+/* line 380, ../sass/_codemirror.scss */
 .editor .entry-markdown, .editor .entry-preview {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -674,24 +663,24 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   background: #fff;
 }
 
-/* line 401, ../sass/_codemirror.scss */
+/* line 391, ../sass/_codemirror.scss */
 .editor .entry-markdown.active, .editor .entry-preview.active {
   z-index: 200;
 }
 
-/* line 405, ../sass/_codemirror.scss */
+/* line 395, ../sass/_codemirror.scss */
 .editor .entry-markdown.active .markdown, .editor .entry-markdown.active .entry-preview-content, .editor .entry-preview.active .markdown, .editor .entry-preview.active .entry-preview-content {
   height: auto;
   overflow: auto;
 }
 
-/* line 410, ../sass/_codemirror.scss */
+/* line 400, ../sass/_codemirror.scss */
 .editor .entry-word-count {
   float: right;
   padding-right: 22px;
 }
 
-/* line 415, ../sass/_codemirror.scss */
+/* line 405, ../sass/_codemirror.scss */
 .editor .entry-markdown-content textarea {
   border: 0;
   width: 100%;
@@ -706,7 +695,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   padding: 0;
 }
 
-/* line 429, ../sass/_codemirror.scss */
+/* line 419, ../sass/_codemirror.scss */
 .editor .CodeMirror {
   height: auto;
   position: absolute;
@@ -720,24 +709,24 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   color: #6c7379;
 }
 
-/* line 442, ../sass/_codemirror.scss */
+/* line 432, ../sass/_codemirror.scss */
 .editor .CodeMirror-lines {
   padding: 35px 0 40px;
 }
 
-/* line 446, ../sass/_codemirror.scss */
+/* line 436, ../sass/_codemirror.scss */
 .editor .CodeMirror pre {
   padding: 0 40px 0 15px;
 }
 
-/* line 450, ../sass/_codemirror.scss */
+/* line 440, ../sass/_codemirror.scss */
 .editor .cm-header {
   color: #000;
   font-size: 1.4em;
   line-height: 1.4em;
 }
 
-/* line 456, ../sass/_codemirror.scss */
+/* line 446, ../sass/_codemirror.scss */
 .editor .entry-preview-content {
   position: absolute;
   top: 0;
@@ -748,47 +737,47 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   padding: 30px 40px 40px 15px;
 }
 
-/* line 466, ../sass/_codemirror.scss */
+/* line 456, ../sass/_codemirror.scss */
 .cm-s-default .cm-variable, .cm-s-default .cm-property, .cm-s-default .cm-operator, .editor .cm-string, .editor .cm-link, .editor .cm-comment, .editor .cm-quote {
   color: #000;
 }
 
-/* line 470, ../sass/_codemirror.scss */
+/* line 460, ../sass/_codemirror.scss */
 .cm-s-default .cm-meta, .cm-s-default .cm-qualifier {
   color: #555;
 }
 
-/* line 474, ../sass/_codemirror.scss */
+/* line 464, ../sass/_codemirror.scss */
 .cm-s-default .cm-error, .cm-invalidchar {
   color: red;
 }
 
-/* line 478, ../sass/_codemirror.scss */
+/* line 468, ../sass/_codemirror.scss */
 .cm-s-default .cm-attribute, .cm-s-default .cm-link {
   color: #00c;
 }
 
-/* line 482, ../sass/_codemirror.scss */
+/* line 472, ../sass/_codemirror.scss */
 .cm-header, .cm-strong, .nivo-controlNav a.active, b, strong, blockquote cite {
   font-weight: 700;
 }
 
-/* line 486, ../sass/_codemirror.scss */
+/* line 476, ../sass/_codemirror.scss */
 .cm-em, dfn {
   font-style: italic;
 }
 
-/* line 490, ../sass/_codemirror.scss */
+/* line 480, ../sass/_codemirror.scss */
 .cm-link, a:hover {
   text-decoration: underline;
 }
 
-/* line 494, ../sass/_codemirror.scss */
+/* line 484, ../sass/_codemirror.scss */
 .CodeMirror-sizer, .wrapper, .manage {
   position: relative;
 }
 
-/* line 498, ../sass/_codemirror.scss */
+/* line 488, ../sass/_codemirror.scss */
 .CodeMirror-widget, audio, canvas, video {
   display: inline-block;
 }

@@ -1,6 +1,6 @@
-<div id="editor">
+<form id="editor" autocomplete="off">
     <section id="post-title">
-        <input type="text" id="title" value="" placeholder="Your post title" autocomplete="false" />
+        <input type="text" id="title" value="" placeholder="Your post title" autocomplete="off" />
     </section>
     <section class="editor">
         <div class="editorwrap">
@@ -25,7 +25,7 @@
     <section id="post-tags">
         <input type="button" id="publish" class="btn" value="Publish" />
     </section>
-</div>
+</form>
 <script src="js/markdown.js" type="text/javascript"></script>
 <script>
 function editorHeight() {
