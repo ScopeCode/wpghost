@@ -1,6 +1,17 @@
+<?php
+$args = array(
+    'post_type' => 'post',
+    'post_status' => 'any'
+);
+if($_GET['edit']) {
+    $args['post__in'] = array($_GET['edit']);
+    $wp_query = new WP_Query( $args );
+    $wp_post = $wp_query->post;
+}
+?>
 <form id="editor" autocomplete="off">
     <section id="post-title">
-        <input type="text" id="title" value="" placeholder="Your post title" autocomplete="off" />
+        <input type="text" id="title" placeholder="Your post title" autocomplete="off" value="<?php echo $wp_post->post_title?>" />
     </section>
     <section class="editor">
         <div class="editorwrap">
@@ -9,7 +20,7 @@
                     Markdown 
                 </header>
                 <section class="entry-markdown-content">
-                    <textarea id="entry-markdown" placeholder="Write something witty"></textarea>
+                    <textarea id="entry-markdown" placeholder="Write something witty"><?php echo $wp_post->post_content?></textarea>
                 </section>
             </section>
             <section class="entry-preview active">
@@ -33,18 +44,15 @@
 <script src="js/showdown.min.js" type="text/javascript"></script>
 <script src="js/extensions/twitter.js" type="text/javascript"></script>
 <script src="js/extensions/github.js" type="text/javascript"></script>
+<script src="js/extensions/youtube.js" type="text/javascript"></script>
 
 <script>
 function editorHeight() {
     $('.editor .editorwrap').height($(window).height() - $('#post-tags').height() - $('#post-title').height()).css({ top: $('#post-title').height() + 'px'});
 }
-$(function() {
-    editorHeight();
-});
-$(window).resize(editorHeight);
 
 // Startup markdown convertor
-var converter = new Showdown.converter({ extensions: ['twitter', 'github'] });
+var converter = new Showdown.converter({ extensions: ['twitter', 'github', 'youtube'] });
 
 // Render markdown with CodeMirror
 var editor = CodeMirror.fromTextArea(document.getElementById('entry-markdown'), {
@@ -66,8 +74,12 @@ function countWords() {
     t.length && (e.innerHTML = t.match(/\S+/g).length + " words")
 }
 
-// Auto scroll preview when scrolling on markdown code area
 $(function () {
+    
+    editorHeight();
+    updatePreview();
+
+    // Auto scroll preview when scrolling on markdown code area    
     function t(t) {
         var n = $(t.target),
             r = $(".entry-preview-content"),
@@ -86,5 +98,7 @@ $(function () {
         $(".entry-preview-content").scrollTop() > 10 ? $(".entry-preview").addClass("scrolling") : $(".entry-preview").removeClass("scrolling")
     })
 });
+
+$(window).resize(editorHeight);
       
 </script>

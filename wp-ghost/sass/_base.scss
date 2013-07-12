@@ -1,5 +1,7 @@
+
 html, body {
     height: 100%;
+    background: $background-color;
 }
 
 html {
@@ -24,8 +26,8 @@ a:focus {
 }
 
 h1 {
-font-size:2em;
-margin:.67em 0;
+    font-size:2em;
+    margin:.67em 0;
 }
 
 hr {
@@ -70,45 +72,58 @@ blockquote {
 }
 
 textarea {
-overflow:auto;
-vertical-align:top;
+    overflow:auto;
+    vertical-align:top;
 }
 
 pre code {
-word-wrap:normal;
-white-space:pre-wrap;
+    word-wrap:normal;
+    white-space:pre-wrap;
 }
 
 code {
-white-space:pre;
-font-family:monospace;
+    white-space:pre;
+    font-family:monospace;
 }
 
 .fade {
-opacity:0;
--webkit-transition:opacity .15s linear;
--moz-transition:opacity .15s linear;
-transition:opacity .15s linear;
+    opacity:0;
+    -webkit-transition:opacity .15s linear;
+    -moz-transition:opacity .15s linear;
+    transition:opacity .15s linear;
 }
 
 .fade.in {
-opacity:1;
+    opacity:1;
 }
 
 .hidden {
-text-indent:-9999px;
-visibility:hidden;
-display:none;
+    text-indent:-9999px;
+    visibility:hidden;
+    display:none;
 }
 
 .invisible {
-visibility:hidden;
+    visibility:hidden;
 }
 
 .left {
-float:left;
+    float:left;
 }
 
 .markdown,pre,code {
-font-family:Inconsolata, monospace;
+    font-family:Inconsolata, monospace;
+}
+
+main {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+section {
+    height: 100%;
 }

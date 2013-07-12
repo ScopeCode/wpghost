@@ -1,6 +1,116 @@
 @import "foundation/components/grid";
 
-#posts,
-#post-preview {
-    @include grid-column(6);
+$add-bgcolor: #9aba4f;
+$add-color: #fff;
+$posts-border-color: #ecede7;
+
+$header-height: 50px;
+
+#post-list {
+    @include grid-column(4);
 }
+
+#post-preview {
+    @include grid-column(8);
+}
+
+#post-list,
+#post-preview {
+    header, hgroup {
+        background: #fff;
+        position: relative;
+        height: $header-height;
+        z-index: 99;
+    }
+    a {
+        color: $link-color;
+    }
+    a i {
+        text-decoration: none;
+        font-size: 1.5em;
+    }
+    .actions {
+            right: 15px;
+    }
+    .actions, select {
+        position: absolute;
+        top: 15px;
+    }
+    #posts, #post-preview-content {
+        position: relative;
+        height: 100%;
+        background: #fff;
+        margin-top: -$header-height;
+    }
+}
+
+#post-list {
+    hgroup {
+        .actions {
+            a#add {
+                float: left;
+                background: $add-bgcolor;
+                color: $add-color;
+                text-decoration: none;
+                padding: 2px 5px;
+                border-radius: 5px;
+                i {
+                    position: relative;
+                    top: 1px;
+                }
+            }
+        }
+        select {
+            left: 15px;
+            @include grid-column(6);
+        }
+    }
+    #posts {
+        ul {
+            padding-top: $header-height;
+            overflow: auto;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+    }
+    ul, li, li a {
+        display: block;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        background: #fff;
+        a {
+            border-top: 1px solid $posts-border-color;
+            color: #333;
+            padding: 15px;
+            text-decoration: none;
+            span.title {
+                font-size: 1.5em;
+            }
+            &.selected {
+                background: #f8f8f8;
+                span.title {
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+#post-preview {
+
+    #post-preview-content {
+        #post-content {
+            padding-top: $header-height;
+            overflow: auto;
+            #post-content-render {
+                border-top: 1px solid $posts-border-color;
+                padding: 20px;
+            }
+        }
+    }
+}
+
+
