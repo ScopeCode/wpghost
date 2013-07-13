@@ -3,7 +3,7 @@ wp-admin/*
 wp-content/*
 wp-includes/*
 wp-ghost/.sass-cache/*
-index.php
+/index.php
 license.txt
 readme.html
 wp-activate.php
