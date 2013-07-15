@@ -25,7 +25,7 @@ if($_GET['edit']) {
             </section>
             <section class="entry-preview active">
                 <header class="floatingheader">
-                  Preview <span class="entry-word-count">0 words</span>
+                  Preview <span id="entry-word-count" class="entry-word-count">0 words</span>
                 </header>
                 <section class="entry-preview-content">
                     <div id="rendered-markdown" class="rendered-markdown"></div>
@@ -34,6 +34,9 @@ if($_GET['edit']) {
         </div>
     </section>
     <section id="post-tags">
+        <input type="hidden" name="pid" value="<?php echo $_GET['edit'] || "0"; ?>" />
+        <input type="hidden" name="action" value="publish" />
+        <div style="display: none"><textarea name="markdown" id="render-code"></textarea><textarea name="html" id="render-html"></textarea></div>
         <input type="button" id="publish" class="btn" value="Publish" />
     </section>
 </form>
@@ -42,6 +45,7 @@ if($_GET['edit']) {
 <script src="js/codemirror/xml.js" type="text/javascript"></script>
 <script src="js/codemirror/markdown.js" type="text/javascript"></script>
 <script src="js/showdown.min.js" type="text/javascript"></script>
+<script src="js/video-resize.js" type="text/javascript"></script>
 <script src="js/extensions/twitter.js" type="text/javascript"></script>
 <script src="js/extensions/github.js" type="text/javascript"></script>
 <script src="js/extensions/youtube.js" type="text/javascript"></script>
@@ -61,23 +65,34 @@ var editor = CodeMirror.fromTextArea(document.getElementById('entry-markdown'), 
   lineWrapping: !0
 });
 
-editor.on("change",updatePreview);
+editor.on("change", updatePreview);
 
 function updatePreview() {
-  $('#rendered-markdown').html(converter.makeHtml(editor.getValue()));
-  countWords();
+    var markcode = editor.getValue();
+    var markrender = converter.makeHtml(editor.getValue());
+    $('#rendered-markdown').html(markrender);
+    $('#render-code').val(markcode);
+    $('#render-html').val(markrender);
+    countWords();
+    resizeVideo();
 }
 
 function countWords() {
-    var e = document.getElementsByClassName("entry-word-count")[0],
-        t = $('.CodeMirror-code').text();
-    t.length && (e.innerHTML = t.match(/\S+/g).length + " words")
+    var e = $("#entry-word-count"),
+        t = $('.CodeMirror-code').text().match(/\S+/g);
+        if(t) e.html(t.length + ' words');
+}
+
+function savePost() {
+    $.post('./', $('#editor').serialize());
 }
 
 $(function () {
     
     editorHeight();
     updatePreview();
+    
+    $('#publish').click(savePost);
 
     // Auto scroll preview when scrolling on markdown code area    
     function t(t) {
