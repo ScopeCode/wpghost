@@ -1,14 +1,5 @@
 <?php
-require('../wp-blog-header.php');
 require "lib/functions.php";
-$redirect = $_SERVER['PHP_SELF'];
-if(!$current_user->data) header('Location: ' . wp_login_url( $redirect ));
-
-if($_POST) {
-  
-  return;
-}
-
 ?><!DOCTYPE html>
 <html>
   <head>

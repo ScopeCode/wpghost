@@ -1,14 +1,3 @@
-<?php
-$args = array(
-    'post_type' => 'post',
-    'post_status' => 'any'
-);
-if($_GET['edit']) {
-    $args['post__in'] = array($_GET['edit']);
-    $wp_query = new WP_Query( $args );
-    $wp_post = $wp_query->post;
-}
-?>
 <form id="editor" autocomplete="off">
     <section id="post-title">
         <input type="text" id="title" placeholder="Your post title" autocomplete="off" value="<?php echo $wp_post->post_title?>" />
@@ -41,6 +30,7 @@ if($_GET['edit']) {
     </section>
 </form>
 
+<script src="js/Ghost.class.js" type="text/javascript"></script>
 <script src="js/codemirror.js" type="text/javascript"></script>
 <script src="js/codemirror/xml.js" type="text/javascript"></script>
 <script src="js/codemirror/markdown.js" type="text/javascript"></script>
@@ -50,10 +40,7 @@ if($_GET['edit']) {
 <script src="js/extensions/github.js" type="text/javascript"></script>
 <script src="js/extensions/youtube.js" type="text/javascript"></script>
 
-<script>
-function editorHeight() {
-    $('.editor .editorwrap').height($(window).height() - $('#post-tags').height() - $('#post-title').height()).css({ top: $('#post-title').height() + 'px'});
-}
+<script>var g = new Ghost;
 
 // Startup markdown convertor
 var converter = new Showdown.converter({ extensions: ['twitter', 'github', 'youtube'] });
@@ -65,17 +52,7 @@ var editor = CodeMirror.fromTextArea(document.getElementById('entry-markdown'), 
   lineWrapping: !0
 });
 
-editor.on("change", updatePreview);
-
-function updatePreview() {
-    var markcode = editor.getValue();
-    var markrender = converter.makeHtml(editor.getValue());
-    $('#rendered-markdown').html(markrender);
-    $('#render-code').val(markcode);
-    $('#render-html').val(markrender);
-    countWords();
-    resizeVideo();
-}
+editor.on("change", g.editor.update);
 
 function countWords() {
     var e = $("#entry-word-count"),
@@ -83,16 +60,12 @@ function countWords() {
         if(t) e.html(t.length + ' words');
 }
 
-function savePost() {
-    $.post('./', $('#editor').serialize());
-}
-
 $(function () {
     
-    editorHeight();
-    updatePreview();
+    g.editor.height();
+    g.editor.update();
     
-    $('#publish').click(savePost);
+    $('#publish').click(g.editor.save);
 
     // Auto scroll preview when scrolling on markdown code area    
     function t(t) {
@@ -114,6 +87,6 @@ $(function () {
     })
 });
 
-$(window).resize(editorHeight);
+$(window).resize(g.editor.height);
       
 </script>
