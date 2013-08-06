@@ -14,7 +14,7 @@ require(public_base_directory() . '/../../wp-blog-header.php');
 $redirect = $_SERVER['PHP_SELF'];
 if(!$current_user->data) header('Location: ' . wp_login_url( $redirect ));
 
-function the_posts($params) {
+function the_posts($params = false) {
     
     $args = array(
         'post_type' => 'post',

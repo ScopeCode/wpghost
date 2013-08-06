@@ -2038,7 +2038,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 /* line 91, ../sass/_minimalect.scss */
 .minict_wrapper ul li.minict_empty {
   display: none;
-  background: white !important;
+  background: #fff !important;
   color: #bbb;
   text-align: center;
   font-size: 0.9rem;
@@ -2078,8 +2078,8 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
 /* line 134, ../sass/_minimalect.scss */
 .minict_wrapper.bubble:after {
   border-left: 1px solid #e5e5e5;
-  -webkit-box-shadow: inset 1px 0px 0px 0px white;
-  box-shadow: inset 1px 0px 0px 0px white;
+  -webkit-box-shadow: inset 1px 0px 0px 0px #fff;
+  box-shadow: inset 1px 0px 0px 0px #fff;
   height: 2.05rem;
 }
 /* line 141, ../sass/_minimalect.scss */
@@ -2114,7 +2114,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   height: 0px;
   border-style: solid;
   border-width: 0 10px 10px 10px;
-  border-color: transparent transparent white transparent;
+  border-color: transparent transparent #ffffff transparent;
 }
 /* line 174, ../sass/_minimalect.scss */
 .minict_wrapper.bubble ul li.minict_first {

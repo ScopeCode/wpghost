@@ -10,9 +10,6 @@ require "lib/functions.php";
     <!--[if IE]>
         <link href="css/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
     <![endif]-->
-    <script src="js/jquery-1.8.2.min.js"></script>
-    <script src="js/jquery.minimalect.min.js"></script>
-    <script src="js/script.js"></script>
   </head>
   <body>
     <header>
@@ -29,5 +26,10 @@ require "lib/functions.php";
       ?>
       </div>
     </main>
+
+    <script src="js/jquery-1.8.2.min.js"></script>
+    <script src="js/jquery.minimalect.min.js" type="text/javascript"></script>
+    <script src="js/Ghost.class.js" type="text/javascript"></script>
+    <script>var g = new Ghost();</script>
   </body>
 </html>
