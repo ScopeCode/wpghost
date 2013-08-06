@@ -3,6 +3,7 @@
 $add-bgcolor: #9aba4f;
 $add-color: #fff;
 $posts-border-color: #ecede7;
+$header-bgcolor: #333;
 
 $header-height: 50px;
 
@@ -14,8 +15,35 @@ $header-height: 50px;
     @include grid-column(8);
 }
 
+body>header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: $header-bgcolor;
+    height: $header-height;
+    z-index:99;
+    h1 {
+        a { 
+            color: #fff;
+        }
+        a, a:hover {
+            text-decoration: none;
+        }
+        margin: 0;
+        padding: 12px 15px;
+    }
+}
+
+main {
+    z-index: 98;
+}
+
 #post-list,
 #post-preview {
+    #post-hidden-content {
+        display: none;
+    }
     header, hgroup {
         background: #fff;
         position: relative;
@@ -74,25 +102,25 @@ $header-height: 50px;
             left: 0;
             width: 100%;
         }
-    }
-    ul, li, li a {
-        display: block;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        background: #fff;
-        a {
-            border-top: 1px solid $posts-border-color;
-            color: #333;
-            padding: 15px;
-            text-decoration: none;
-            span.title {
-                font-size: 1.5em;
-            }
-            &.selected {
-                background: #f8f8f8;
+        ul, li, li a {
+            display: block;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            background: #fff;
+            a {
+                border-top: 1px solid $posts-border-color;
+                color: #333;
+                padding: 15px;
+                text-decoration: none;
                 span.title {
-                    font-weight: 500;
+                    font-size: 1.5em;
+                }
+                &.selected {
+                    background: #f8f8f8;
+                    span.title {
+                        font-weight: 500;
+                    }
                 }
             }
         }

@@ -1,6 +1,6 @@
 <form id="editor" autocomplete="off">
     <section id="post-title">
-        <input type="text" id="title" placeholder="Your post title" autocomplete="off" value="<?php echo $wp_post->post_title?>" />
+        <input type="text" id="title" name="title" placeholder="Your post title" autocomplete="off" value="<?php echo $wp_post->post_title?>" />
     </section>
     <section class="editor">
         <div class="editorwrap">
@@ -9,7 +9,7 @@
                     Markdown 
                 </header>
                 <section class="entry-markdown-content">
-                    <textarea id="entry-markdown" placeholder="Write something witty"><?php echo $wp_post->post_content?></textarea>
+                    <textarea id="entry-markdown" placeholder="Write something witty"><?php echo $markdown?></textarea>
                 </section>
             </section>
             <section class="entry-preview active">
@@ -23,10 +23,11 @@
         </div>
     </section>
     <section id="post-tags">
-        <input type="hidden" name="pid" value="<?php echo $_GET['edit'] || "0"; ?>" />
+        <input type="hidden" name="save" value="1" />
+        <input type="hidden" name="pid" value="<?php echo $post_id; ?>" />
         <input type="hidden" name="action" value="publish" />
         <div style="display: none"><textarea name="markdown" id="render-code"></textarea><textarea name="html" id="render-html"></textarea></div>
-        <input type="button" id="publish" class="btn" value="Publish" />
+        <input type="button" id="publish" class="btn" value="Save" />
     </section>
 </form>
 
@@ -84,7 +85,15 @@ $(function () {
         $(".CodeMirror-scroll").scrollTop() > 10 ? $(".entry-markdown").addClass("scrolling") : $(".entry-markdown").removeClass("scrolling")
     }), $(".entry-preview-content").scroll(function () {
         $(".entry-preview-content").scrollTop() > 10 ? $(".entry-preview").addClass("scrolling") : $(".entry-preview").removeClass("scrolling")
-    })
+    });
+    
+    
+    if ($title.val()) {
+        editor.focus();
+    } else {
+        $title.focus().select();
+    }
+    
 });
 
 $(window).resize(g.editor.height);

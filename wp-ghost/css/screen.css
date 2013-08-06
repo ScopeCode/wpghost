@@ -1285,7 +1285,7 @@ ul.icons li .icon-large:before {
   content: "\f200";
 }
 
-/* line 2, ../sass/_button.scss */
+/* line 4, ../sass/_button.scss */
 .btn {
   border: 1px solid #005472;
   color: white;
@@ -1314,7 +1314,7 @@ ul.icons li .icon-large:before {
   text-decoration: none;
   text-align: center;
 }
-/* line 18, ../sass/_button.scss */
+/* line 20, ../sass/_button.scss */
 .btn:hover {
   background-color: #0079a5;
   background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #009ed8), color-stop(100%, #005f81));
@@ -1323,7 +1323,7 @@ ul.icons li .icon-large:before {
   background: -o-linear-gradient(top, #009ed8, #005f81);
   background: linear-gradient(top, #009ed8, #005f81);
 }
-/* line 22, ../sass/_button.scss */
+/* line 24, ../sass/_button.scss */
 .btn:active {
   -webkit-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3), 0px 1px 0px rgba(255, 255, 255, 0.2);
   -moz-box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.3), 0px 1px 0px rgba(255, 255, 255, 0.2);
@@ -1336,13 +1336,13 @@ ul.icons li .icon-large:before {
   color: #e6e6e6;
 }
 
-/* line 30, ../sass/_button.scss */
+/* line 32, ../sass/_button.scss */
 input.btn, button.btn {
   height: 34px;
   cursor: pointer;
 }
 
-/* line 40, ../sass/_button.scss */
+/* line 42, ../sass/_button.scss */
 .btn.disabled,
 .btn.disabled:hover,
 .btn.disabled:active,
@@ -1355,6 +1355,18 @@ button.btn:disabled {
   border: 1px solid #DDD;
   text-shadow: 0 1px 1px white;
   color: #CCC;
+  cursor: default;
+}
+
+/* line 54, ../sass/_button.scss */
+.btn.success,
+.btn.success:hover,
+.btn.success:active {
+  -webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+  background: #51a351;
+  border: 1px solid #2f5f2f;
   cursor: default;
 }
 
@@ -1932,6 +1944,189 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {
   display: inline-block;
 }
 
+/* line 1, ../sass/_minimalect.scss */
+.minict_wrapper {
+  font-family: "Segoe UI", Segoe, "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
+  color: #333;
+  background: #fff;
+  position: relative;
+  width: 80%;
+  height: 2.2rem;
+  top: 12px;
+  left: 12px;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 18, ../sass/_minimalect.scss */
+.minict_wrapper * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+/* line 24, ../sass/_minimalect.scss */
+.minict_wrapper:after {
+  content: "\25BC";
+  display: block;
+  position: absolute;
+  height: 2.1rem;
+  width: 2.1rem;
+  top: 0;
+  right: 0;
+  font-size: 0.6rem;
+  line-height: 1.9rem;
+  text-align: center;
+  color: #555;
+}
+/* line 38, ../sass/_minimalect.scss */
+.minict_wrapper.active:after {
+  content: "\25B2";
+}
+/* line 42, ../sass/_minimalect.scss */
+.minict_wrapper input {
+  border: 0;
+  outline: none;
+  background: none;
+  font-family: "Segoe UI", Segoe, "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
+  color: #333;
+  font-size: 1rem;
+  height: 1.9rem;
+  padding: 0 2.2rem 0 0.4rem;
+  cursor: default;
+  width: 100%;
+}
+/* line 55, ../sass/_minimalect.scss */
+.minict_wrapper ul {
+  display: none;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  position: absolute;
+  width: 100%;
+  border: 1px solid #e5e5e5;
+  border-radius: 3px;
+  top: 2rem;
+  left: 0;
+  max-height: 22rem;
+  overflow-y: auto;
+  z-index: 999999;
+}
+/* line 70, ../sass/_minimalect.scss */
+.minict_wrapper ul li {
+  list-style: none;
+  font-size: 1rem;
+  padding: 0 0.7rem;
+  cursor: pointer;
+  background: #fff;
+  height: 2.2rem;
+  line-height: 2rem;
+}
+/* line 79, ../sass/_minimalect.scss */
+.minict_wrapper ul li:hover {
+  background: #fcfcfc;
+  color: #111;
+}
+/* line 84, ../sass/_minimalect.scss */
+.minict_wrapper ul li.minict_group {
+  color: #444;
+  background: #f6f6f6;
+  font-weight: bold;
+  cursor: default;
+}
+/* line 91, ../sass/_minimalect.scss */
+.minict_wrapper ul li.minict_empty {
+  display: none;
+  background: white !important;
+  color: #bbb;
+  text-align: center;
+  font-size: 0.9rem;
+  height: 3.5rem;
+  line-height: 3.3rem;
+}
+/* line 101, ../sass/_minimalect.scss */
+.minict_wrapper ul li.selected {
+  color: #819a9a;
+  background: #f9fcff;
+}
+/* line 106, ../sass/_minimalect.scss */
+.minict_wrapper ul li.highlighted {
+  color: #fff;
+  background: #819a9a;
+}
+/* line 111, ../sass/_minimalect.scss */
+.minict_wrapper ul li.hidden {
+  display: none;
+}
+
+/* line 120, ../sass/_minimalect.scss */
+.minict_wrapper.bubble {
+  -webkit-box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.05);
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.05);
+  background: -moz-linear-gradient(top, white 0%, #f9f9f9 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #f9f9f9));
+  background: -webkit-linear-gradient(top, white 0%, #f9f9f9 100%);
+  background: -o-linear-gradient(top, white 0%, #f9f9f9 100%);
+  background: -ms-linear-gradient(top, white 0%, #f9f9f9 100%);
+  background: linear-gradient(to bottom, #ffffff 0%, #f9f9f9 100%);
+}
+/* line 130, ../sass/_minimalect.scss */
+.minict_wrapper.bubble:hover {
+  border-color: #dcdcdc;
+}
+/* line 134, ../sass/_minimalect.scss */
+.minict_wrapper.bubble:after {
+  border-left: 1px solid #e5e5e5;
+  -webkit-box-shadow: inset 1px 0px 0px 0px white;
+  box-shadow: inset 1px 0px 0px 0px white;
+  height: 2.05rem;
+}
+/* line 141, ../sass/_minimalect.scss */
+.minict_wrapper.bubble ul {
+  top: 2.7rem;
+  -webkit-box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  overflow: visible;
+}
+/* line 148, ../sass/_minimalect.scss */
+.minict_wrapper.bubble ul:before {
+  position: absolute;
+  top: -11px;
+  left: 19px;
+  content: ".";
+  color: transparent;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0 11px 11px 11px;
+  border-color: transparent transparent #e5e5e5 transparent;
+}
+/* line 161, ../sass/_minimalect.scss */
+.minict_wrapper.bubble ul:after {
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  content: ".";
+  color: transparent;
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 0 10px 10px 10px;
+  border-color: transparent transparent white transparent;
+}
+/* line 174, ../sass/_minimalect.scss */
+.minict_wrapper.bubble ul li.minict_first {
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+}
+/* line 178, ../sass/_minimalect.scss */
+.minict_wrapper.bubble ul li.minict_last {
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+
 /* line 2, ../sass/_base.scss */
 html, body {
   height: 100%;
@@ -2067,7 +2262,7 @@ code {
 }
 
 /* line 118, ../sass/_base.scss */
-main {
+main, #container {
   position: absolute;
   top: 0;
   left: 0;
@@ -2621,7 +2816,7 @@ section {
     float: right !important;
   }
 }
-/* line 9, ../sass/_posts.scss */
+/* line 10, ../sass/_posts.scss */
 #post-list {
   position: relative;
   padding-left: 0.9375em;
@@ -2630,7 +2825,7 @@ section {
   float: left;
 }
 
-/* line 13, ../sass/_posts.scss */
+/* line 14, ../sass/_posts.scss */
 #post-preview {
   position: relative;
   padding-left: 0.9375em;
@@ -2639,7 +2834,41 @@ section {
   float: left;
 }
 
-/* line 19, ../sass/_posts.scss */
+/* line 18, ../sass/_posts.scss */
+body > header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: #333333;
+  height: 50px;
+  z-index: 99;
+}
+/* line 26, ../sass/_posts.scss */
+body > header h1 {
+  margin: 0;
+  padding: 12px 15px;
+}
+/* line 27, ../sass/_posts.scss */
+body > header h1 a {
+  color: #fff;
+}
+/* line 30, ../sass/_posts.scss */
+body > header h1 a, body > header h1 a:hover {
+  text-decoration: none;
+}
+
+/* line 38, ../sass/_posts.scss */
+main {
+  z-index: 98;
+}
+
+/* line 44, ../sass/_posts.scss */
+#post-list #post-hidden-content,
+#post-preview #post-hidden-content {
+  display: none;
+}
+/* line 47, ../sass/_posts.scss */
 #post-list header, #post-list hgroup,
 #post-preview header,
 #post-preview hgroup {
@@ -2648,30 +2877,30 @@ section {
   height: 50px;
   z-index: 99;
 }
-/* line 25, ../sass/_posts.scss */
+/* line 53, ../sass/_posts.scss */
 #post-list a,
 #post-preview a {
   color: #c4c4bc;
 }
-/* line 28, ../sass/_posts.scss */
+/* line 56, ../sass/_posts.scss */
 #post-list a i,
 #post-preview a i {
   text-decoration: none;
   font-size: 1.5em;
 }
-/* line 32, ../sass/_posts.scss */
+/* line 60, ../sass/_posts.scss */
 #post-list .actions,
 #post-preview .actions {
   right: 15px;
 }
-/* line 35, ../sass/_posts.scss */
+/* line 63, ../sass/_posts.scss */
 #post-list .actions, #post-list select,
 #post-preview .actions,
 #post-preview select {
   position: absolute;
   top: 15px;
 }
-/* line 39, ../sass/_posts.scss */
+/* line 67, ../sass/_posts.scss */
 #post-list #posts, #post-list #post-preview-content,
 #post-preview #posts,
 #post-preview #post-preview-content {
@@ -2681,7 +2910,7 @@ section {
   margin-top: -50px;
 }
 
-/* line 50, ../sass/_posts.scss */
+/* line 78, ../sass/_posts.scss */
 #post-list hgroup .actions a#add {
   float: left;
   background: #9aba4f;
@@ -2690,12 +2919,12 @@ section {
   padding: 2px 5px;
   border-radius: 5px;
 }
-/* line 57, ../sass/_posts.scss */
+/* line 85, ../sass/_posts.scss */
 #post-list hgroup .actions a#add i {
   position: relative;
   top: 1px;
 }
-/* line 63, ../sass/_posts.scss */
+/* line 91, ../sass/_posts.scss */
 #post-list hgroup select {
   left: 15px;
   position: relative;
@@ -2704,7 +2933,7 @@ section {
   width: 50%;
   float: left;
 }
-/* line 69, ../sass/_posts.scss */
+/* line 97, ../sass/_posts.scss */
 #post-list #posts ul {
   padding-top: 50px;
   overflow: auto;
@@ -2713,40 +2942,40 @@ section {
   left: 0;
   width: 100%;
 }
-/* line 78, ../sass/_posts.scss */
-#post-list ul, #post-list li, #post-list li a {
+/* line 105, ../sass/_posts.scss */
+#post-list #posts ul, #post-list #posts li, #post-list #posts li a {
   display: block;
   margin: 0;
   padding: 0;
   list-style: none;
   background: #fff;
 }
-/* line 84, ../sass/_posts.scss */
-#post-list ul a, #post-list li a, #post-list li a a {
+/* line 111, ../sass/_posts.scss */
+#post-list #posts ul a, #post-list #posts li a, #post-list #posts li a a {
   border-top: 1px solid #ecede7;
   color: #333;
   padding: 15px;
   text-decoration: none;
 }
-/* line 89, ../sass/_posts.scss */
-#post-list ul a span.title, #post-list li a span.title, #post-list li a a span.title {
+/* line 116, ../sass/_posts.scss */
+#post-list #posts ul a span.title, #post-list #posts li a span.title, #post-list #posts li a a span.title {
   font-size: 1.5em;
 }
-/* line 92, ../sass/_posts.scss */
-#post-list ul a.selected, #post-list li a.selected, #post-list li a a.selected {
+/* line 119, ../sass/_posts.scss */
+#post-list #posts ul a.selected, #post-list #posts li a.selected, #post-list #posts li a a.selected {
   background: #f8f8f8;
 }
-/* line 94, ../sass/_posts.scss */
-#post-list ul a.selected span.title, #post-list li a.selected span.title, #post-list li a a.selected span.title {
+/* line 121, ../sass/_posts.scss */
+#post-list #posts ul a.selected span.title, #post-list #posts li a.selected span.title, #post-list #posts li a a.selected span.title {
   font-weight: 500;
 }
 
-/* line 105, ../sass/_posts.scss */
+/* line 133, ../sass/_posts.scss */
 #post-preview #post-preview-content #post-content {
   padding-top: 50px;
   overflow: auto;
 }
-/* line 108, ../sass/_posts.scss */
+/* line 136, ../sass/_posts.scss */
 #post-preview #post-preview-content #post-content #post-content-render {
   border-top: 1px solid #ecede7;
   padding: 20px;
@@ -2797,5 +3026,5 @@ section {
 /* line 43, ../sass/_editor.scss */
 #editor #post-tags #publish {
   float: right;
-  margin: 10px;
+  margin: 10px 15px;
 }
