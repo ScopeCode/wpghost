@@ -30,13 +30,3 @@
         <input type="button" id="publish" class="btn" value="Save" />
     </section>
 </form>
-
-<script src="js/codemirror.js" type="text/javascript"></script>
-<script src="js/codemirror/xml.js" type="text/javascript"></script>
-<script src="js/codemirror/markdown.js" type="text/javascript"></script>
-<script src="js/showdown.min.js" type="text/javascript"></script>
-<script src="js/video-resize.js" type="text/javascript"></script>
-<script src="js/extensions/twitter.js" type="text/javascript"></script>
-<script src="js/extensions/github.js" type="text/javascript"></script>
-<script src="js/extensions/youtube.js" type="text/javascript"></script>
-

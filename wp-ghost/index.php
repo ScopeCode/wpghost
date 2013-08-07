@@ -19,6 +19,7 @@ require "lib/functions.php";
       <div id="container">
     <?php
     if($_GET['edit'] || $_GET['new']):
+      $wp_post = single_post($_GET['edit']);
       include "editor/edit.php";
     else:
       include "editor/posts.php";
@@ -26,10 +27,6 @@ require "lib/functions.php";
       ?>
       </div>
     </main>
-
-    <script src="js/jquery-1.8.2.min.js"></script>
-    <script src="js/jquery.minimalect.min.js" type="text/javascript"></script>
-    <script src="js/Ghost.class.js" type="text/javascript"></script>
-    <script>var g = new Ghost();</script>
+    <script data-main="js/Ghost.class.js" src="js/require.js"></script>
   </body>
 </html>

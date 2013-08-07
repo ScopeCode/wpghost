@@ -1,16 +1,12 @@
 <?php
-function public_base_directory() 
+function ghost_directory() 
 { 
     //get public directory structure eg "/top/second/third" 
-    $public_directory = dirname($_SERVER['PHP_SELF']); 
-    //place each directory into array 
-    $directory_array = explode('/', $public_directory); 
-    //get highest or top level in array of directory strings 
-    $public_base = max($directory_array); 
-    
-    return $public_base; 
+    $public_directory = dirname(__FILE__);
+    $directory_array = explode('/wp-ghost', $public_directory); 
+    return $directory_array[0]; 
 }
-require(public_base_directory() . '/../../wp-blog-header.php');
+require(ghost_directory() . '/wp-blog-header.php');
 $redirect = $_SERVER['PHP_SELF'];
 if(!$current_user->data) header('Location: ' . wp_login_url( $redirect ));
 
@@ -41,6 +37,22 @@ function the_posts($params = false) {
         return $posts;   
     }
 }
+
+function single_post($post_id) {
+    if(!$post_id) return false;
+    $args = array(
+        'post_type' => 'post',
+        'post_status' => 'any'
+    );
+    if($_GET['edit']) {
+        $args['post__in'] = array($post_id);
+        $wp_query = new WP_Query( $args );
+        $wp_post = $wp_query->post;
+        return $wp_post;
+    }
+    return false;
+}
+
 
 function save($params) {
     
