@@ -39,18 +39,29 @@ function the_posts($params = false) {
 }
 
 function single_post($post_id) {
+    
     if(!$post_id) return false;
+    
     $args = array(
         'post_type' => 'post',
         'post_status' => 'any'
     );
-    if($_GET['edit']) {
-        $args['post__in'] = array($post_id);
-        $wp_query = new WP_Query( $args );
-        $wp_post = $wp_query->post;
-        return $wp_post;
-    }
-    return false;
+
+    $args['post__in'] = array($post_id);
+    $wp_query = new WP_Query( $args );
+    $wp_post = $wp_query->post;
+    
+    // Grab Markdown
+    $markdown = get_post_meta($post_id, 'markdown', true);
+    
+    // And apply to main post variable
+    if($markdown) 
+        $wp_post->markdown = $markdown;
+    else 
+        $wp_post->markdown = $wp_post->post_content;
+
+    return $wp_post;
+
 }
 
 

@@ -9,7 +9,7 @@
                     Markdown 
                 </header>
                 <section class="entry-markdown-content">
-                    <textarea id="entry-markdown" placeholder="Write something witty"><?php echo $markdown?></textarea>
+                    <textarea id="entry-markdown" placeholder="Write something witty"><?php echo $wp_post->markdown?></textarea>
                 </section>
             </section>
             <section class="entry-preview active">
@@ -24,7 +24,7 @@
     </section>
     <section id="post-tags">
         <input type="hidden" name="save" value="1" />
-        <input type="hidden" name="pid" value="<?php echo $post_id; ?>" />
+        <input type="hidden" name="pid" value="<?php echo $wp_post->ID; ?>" />
         <input type="hidden" name="action" value="publish" />
         <div style="display: none"><textarea name="markdown" id="render-code"></textarea><textarea name="html" id="render-html"></textarea></div>
         <input type="button" id="publish" class="btn" value="Save" />
