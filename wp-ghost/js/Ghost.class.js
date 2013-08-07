@@ -147,11 +147,12 @@ require(["log", "jquery-1.8.2.min", "backbone"], function() {
 	        init: function() {
 	            var _this = this;
 	            var _default_option_text = $($('select option')[0]).text();
+
 	            require(["jquery.minimalect.min"], function() {
 		            $("select").minimalect({
 		                placeholder: _default_option_text,
 		                onchange: function(value,text) {
-		                    $.post('./', 'fetchposts=1&status=' + value, function(data) {
+		                    $.post('./editor/fetch.php', 'status=' + value, function(data) {
 		                        var results = $.parseJSON(data);
 		                        var resultHTML = "", resultList = "";
 		                        if (results.posts) {
@@ -167,8 +168,10 @@ require(["log", "jquery-1.8.2.min", "backbone"], function() {
 		                }
 		            });
 		        });
+
 	            this.list();
 	            this.height();
+
 	            $('#edit').click(function() {
 	               window.location = '?edit=' + $(this).attr('rel');
 	               return false; 
