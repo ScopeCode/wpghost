@@ -20,6 +20,7 @@ require(["log", "jquery-1.8.2.min", "backbone"], function() {
 	    constructor: function() {
 	        if($('#editor').length > 0) this.editor.init();
 	        if($('#posts').length > 0) this.posts.init();
+	        require(["respond.min"]);
 	        log('*Ghost* is _ready_');
 	    },
 
